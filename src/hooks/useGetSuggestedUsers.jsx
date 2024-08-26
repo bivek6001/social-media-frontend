@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { setSuggestedUsers } from '../redux/userSlice'
 import toast from "react-hot-toast"
+
 const useGetSuggestedUsers = () => {
     const dispatch = useDispatch()
 
@@ -10,7 +11,7 @@ const useGetSuggestedUsers = () => {
 
 const fetchUser=async()=>{
     try{
-        const response= await axios.get("https://social-media-backend-8ow4.onrender.com/user/suggestions")
+        const response= await axios.get("https://social-media-backend-8ow4.onrender.com/user/suggestions",{withCredentials:true})
         if(response.data.success){
             dispatch(setSuggestedUsers(response.data.suggestions))
         }

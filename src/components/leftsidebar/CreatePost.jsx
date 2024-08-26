@@ -21,7 +21,7 @@ const dispatch=useDispatch()
             setLoading(true);
             const response=await axios.post("https://social-media-backend-8ow4.onrender.com/post/addPost",{
                 caption
-            })
+            },{withCredentials:true})
             console.log(response.data)
             console.log(caption)
         if(response.data.success){

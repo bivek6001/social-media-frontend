@@ -31,7 +31,7 @@ const Right = () => {
         try{
             const response= await axios.post(`https://social-media-backend-8ow4.onrender.com/message/send/${selectedUser?._id}`,{
                 message
-            });
+            },{withCredentials:true});
             console.log(response)
             if(response.data.success){
                 dispatch(setMessages([...messages,response?.data.newMessage]))
