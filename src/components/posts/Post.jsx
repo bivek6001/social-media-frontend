@@ -39,7 +39,7 @@ const Post = ({post}) => {
 
 
     try {
-      const response= await axios.post(`http://localhost:9000/post/comment/${id}`,{text
+      const response= await axios.post(`https://social-media-backend-8ow4.onrender.com/post/comment/${id}`,{text
 
       },
       {

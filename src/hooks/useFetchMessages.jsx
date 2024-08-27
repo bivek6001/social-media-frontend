@@ -11,7 +11,7 @@ const useFetchMessages = () => {
 
     const fetchMessages= async()=>{
         try {
-            const response= await axios.get(`http://localhost:9000/message/all/${selectedUser?._id}`,
+            const response= await axios.get(`https://social-media-backend-8ow4.onrender.com/message/all/${selectedUser?._id}`,
 
 
 

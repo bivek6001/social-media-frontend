@@ -25,7 +25,7 @@ const Auth = () => {
         // console.log(credentials)
        try {
         setLoading(true)
-        const res= await axios.post("http://localhost:9000/user/signin",credentials,{
+        const res= await axios.post("https://social-media-backend-8ow4.onrender.com/user/signin",credentials,{
           withCredentials:true,
         })
         if(!res.data.success){
@@ -62,7 +62,7 @@ const Auth = () => {
 
         try {
           setLoading(true)
-          const res= await axios.post("http://localhost:9000/user/signup",credentials,{
+          const res= await axios.post("https://social-media-backend-8ow4.onrender.com/user/signup",credentials,{
             withCredentials:true,
           })
         // console.log(res.data) 

@@ -29,7 +29,7 @@ const Right = () => {
         e.preventDefault();
 
         try{
-            const response= await axios.post(`http://localhost:9000/message/send/${selectedUser?._id}`,{
+            const response= await axios.post(`https://social-media-backend-8ow4.onrender.com/message/send/${selectedUser?._id}`,{
                 message
             },{
                 headers:{

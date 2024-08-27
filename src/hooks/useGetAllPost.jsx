@@ -9,7 +9,7 @@ const useGetAllPost = () => {
     const posts= useSelector((state)=>state.post.posts)
     const fetchAllPosts= async (req,res)=>{
         try {
-            const res= await axios.get("http://localhost:9000/post/all",{
+            const res= await axios.get("https://social-media-backend-8ow4.onrender.com/post/all",{
                 headers:{
                     token:localStorage.getItem('token')
                 },
