@@ -11,7 +11,10 @@ const useGetSuggestedUsers = () => {
 
 const fetchUser=async()=>{
     try{
-        const response= await axios.get("https://social-media-backend-8ow4.onrender.com/user/suggestions",{withCredentials:true})
+        const response= await axios.get("http://localhost:9000/user/suggestions",{
+            headers:{
+                token:localStorage.getItem('token')
+            },withCredentials:true})
         if(response.data.success){
             dispatch(setSuggestedUsers(response.data.suggestions))
         }

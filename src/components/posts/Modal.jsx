@@ -11,7 +11,10 @@ const Modal = ({close,id,post}) => {
   const dispatch=useDispatch()
   async function handleDelete(){
     try{
-        const response= await axios.delete(`https://social-media-backend-8ow4.onrender.com/post/delete/${id}`,{
+        const response= await axios.delete(`http://localhost:9000/post/delete/${id}`,{
+          headers:{
+            token:localStorage.getItem('token')
+        },
           withCredentials:true
         })
         if(response.data.success){

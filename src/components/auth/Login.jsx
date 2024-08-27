@@ -25,7 +25,7 @@ const Auth = () => {
         // console.log(credentials)
        try {
         setLoading(true)
-        const res= await axios.post("https://social-media-backend-8ow4.onrender.com/user/signin",credentials,{
+        const res= await axios.post("http://localhost:9000/user/signin",credentials,{
           withCredentials:true,
         })
         if(!res.data.success){
@@ -35,12 +35,13 @@ const Auth = () => {
         }
         else{
           dispatch(setLoggedinuser(res.data.user));
-          
+          localStorage.setItem("token",res.headers.token);
+          // const data= localStorage.getItem("token");
+          // console.log(data)
           setCredentials({});
           toast.success(res.data.message)
-          // console.log(res.data.user)
-          // dispatch(authUser(res.data.user));
-          navigate("/")
+      
+          navigate("/message")
         }
      
 
@@ -61,14 +62,15 @@ const Auth = () => {
 
         try {
           setLoading(true)
-          const res= await axios.post("https://social-media-backend-8ow4.onrender.com/user/signup",credentials,{
+          const res= await axios.post("http://localhost:9000/user/signup",credentials,{
             withCredentials:true,
           })
         // console.log(res.data) 
         toast.success(res.data.message)
         if(res.data.success){
-          navigate("/auth");
-          setPage(true);
+          console.log(res)
+          // navigate("/auth");
+          // setPage(true);
         } }catch (error) {
           toast.error(error.response.data.message)
         }

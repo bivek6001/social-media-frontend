@@ -29,9 +29,13 @@ const Right = () => {
         e.preventDefault();
 
         try{
-            const response= await axios.post(`https://social-media-backend-8ow4.onrender.com/message/send/${selectedUser?._id}`,{
+            const response= await axios.post(`http://localhost:9000/message/send/${selectedUser?._id}`,{
                 message
-            },{withCredentials:true});
+            },{
+                headers:{
+                    token:localStorage.getItem('token')
+                },
+                withCredentials:true});
             console.log(response)
             if(response.data.success){
                 dispatch(setMessages([...messages,response?.data.newMessage]))
@@ -72,7 +76,7 @@ const Right = () => {
 {messages?.map((message, i) =>{
 
         return(
-           <div ref={scroll} className={`message-bubble bg-[#202C33]  ${authUser?._id!==message.sender ? "self-start" : "self-end"} text-white rounded-md max-w-[200px] text-wrap p-2 `}>{message.message}</div>
+           <div ref={scroll} className={`message-bubble   ${authUser?._id!==message.sender ? "self-start" : "self-end"} ${authUser?._id===message.sender ?   "bg-[#0095F6]" : "bg-[#202C33]"} text-white rounded-md max-w-[200px] text-wrap p-2 `}>{message.message}</div>
         )
     })}
 </div>

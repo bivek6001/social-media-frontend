@@ -36,7 +36,7 @@ const Left = () => {
     }}>
       <div className="img relative">
           <img src={user.profilePicture} className='w-[55px] h-[55px] rounded-full object-cover' alt="user-chat-dp" />
-          <div className={`w-[10px] h-[10px] rounded-full absolute  top-0 left-10  ${onlineUsers?.includes(selectedUser?._id) ?  "bg-green-500" : "bg-red-600"}   `}></div>
+          <div className={`w-[10px] h-[10px] rounded-full absolute  top-0 left-10    `}></div>
       </div>
       <div className="username font-medium text-white ">{user.username}</div>
   </div>)
