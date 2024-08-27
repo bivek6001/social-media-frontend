@@ -14,7 +14,7 @@ const useRTM = () => {
         dispatch(setMessages([...messages,newMessage]));
     })
 
- },[messages])
+ },[messages,dispatch])
 
 }
 

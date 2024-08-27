@@ -32,7 +32,7 @@ const useFetchMessages = () => {
 fetchMessages();
 
 
- },[selectedUser])
+ },[selectedUser,dispatch])
 }
 
 export default useFetchMessages
