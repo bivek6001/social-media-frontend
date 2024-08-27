@@ -55,7 +55,7 @@ function App() {
 
 useEffect(()=>{
  if(authUser){
-  const socket= io("http://localhost:9000",{
+  const socket= io("https://social-media-backend-8ow4.onrender.com",{
     query:{
       userId:authUser?._id
     },
