@@ -43,7 +43,7 @@ const Auth = () => {
           setCredentials({});
           toast.success(res.data.message)
       
-          navigate("/message")
+          navigate("/")
         }
      
 
