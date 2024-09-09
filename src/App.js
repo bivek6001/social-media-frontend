@@ -14,9 +14,12 @@ import {
 
 } from "react-router-dom";
 // import { useEffect } from 'react';
-import Feed from "./components/Feed/Feed.jsx"
+// import Feed from "./components/Feed/Feed.jsx"
 import ProtectedRoute from './ProtectedRoute.js';
-
+// import Profile from './components/profile/Profile.jsx';
+// import UserProfile from './components/profile/UserProfile.jsx';
+// import EditProfile from './components/profile/EditProfile.jsx';
+// import Leftsidebar from './components/leftsidebar/Leftsidebar.jsx';
 
 
 const router = createBrowserRouter([
@@ -24,28 +27,41 @@ const router = createBrowserRouter([
     path: "/auth",
     element: <Auth/>
   },
+  // {
+  //   path:"/edit",
+  //   element:<EditProfile/>
+  // },
   
 
   {
     path: "/message",
     element:<ProtectedRoute> <Message></Message></ProtectedRoute>
   },
-  {
-    path: "/",
-    element:<ProtectedRoute> <Mainlayout></Mainlayout></ProtectedRoute>,
-    children:[
-      {
-        path:"/",
+  // {path:"/user/profile",
+  //   element:<UserProfile/>
+  // },
+  // {
+  //   path:"/profile/:id",
+  //   element:<ProtectedRoute>
+  //     <div className='w-screen flex'>
+  //     <Leftsidebar/>
+  //     <Profile/>   </div></ProtectedRoute>
+   
+  // },
+
+  // {
+  //   path: "/",
+  //   element:<> <Mainlayout></Mainlayout>
+  //   </>,
+  //   children:[
+  //     {
+  //       path:"/",
         
-        element:<ProtectedRoute><Feed></Feed></ProtectedRoute>
-      },
-      {
-        path:"/profile",
-        element:<ProtectedRoute> <h1>hi</h1></ProtectedRoute>
-        
-      }
-    ]
-  },
+  //       element:<ProtectedRoute><Feed></Feed></ProtectedRoute>
+  //     },
+     
+    // ]
+  // },
 ]);
 function App() {
     const dispatch = useDispatch()

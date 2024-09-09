@@ -8,13 +8,14 @@ const Mainlayout = () => {
   
   useGetAllPost();
   return (
-    <div className='flex justify-center '>
+    <div className='flex justify-center w-screen  '>
         <Leftsidebar/>
 
-        <div className=' w-[60%] '>
+        <div className='w-[55%]  '>
             <Outlet/>
         </div>
         <Rightsidebar/>
+       
     </div>
   )
 }

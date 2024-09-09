@@ -8,7 +8,7 @@ const useFetchMessages = () => {
     const selectedUser= useSelector((state)=>state.user.selectedUser);
     const dispatch=useDispatch();
     const messages=useSelector((state)=>state.chat.messages)
-
+    console.log(selectedUser)
     const fetchMessages= async()=>{
         try {
             const response= await axios.get(`https://social-media-backend-8ow4.onrender.com/message/all/${selectedUser?._id}`,
@@ -18,7 +18,9 @@ const useFetchMessages = () => {
                     withCredentials:true}
             );
             console.log(response)
+            console.log(response.data.messages)
             if(response.data.success){
+              
                 dispatch(setMessages(response.data.messages))
             }
         } catch (error) {
@@ -28,7 +30,7 @@ const useFetchMessages = () => {
     
  useEffect(()=>{
 
-        
+   
 fetchMessages();
 
 

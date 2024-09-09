@@ -96,7 +96,7 @@ const Post = ({post}) => {
     <span className='font-medium '>{postLike}</span>
     <p>
       <span className='font-medium'>{post.author.username}</span>
-      {post.caption}
+      <p>{post.caption}</p>
     </p>
     <span className='cursor-pointer text-sm text-gray-400'  onClick={()=>{
       setOpenComment(true)
@@ -107,7 +107,7 @@ const Post = ({post}) => {
           commentHandler(post._id)
           
         }} >
-          <input  type="text" placeholder='Add a comment' className='w-[100%]  h-[30px] outline-none' value={text} onChange={(e)=>{
+          <input  type="text" placeholder='Add a comment' className='w-[100%]  h-[30px] outline-none text-sm' value={text} onChange={(e)=>{
             setText(e.target.value);
           }}  />
           <button type="submit" className='text-[#0095F6] font-medium'>Post</button>

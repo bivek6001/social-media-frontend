@@ -22,12 +22,13 @@ const Auth = () => {
       
       if(page){
         //  login logic
-        // console.log(credentials)
+ 
        try {
         setLoading(true)
         const res= await axios.post("https://social-media-backend-8ow4.onrender.com/user/signin",credentials,{
           withCredentials:true,
         })
+        console.log(res)
         if(!res.data.success){
           
           toast.error(res.data.message)
@@ -36,8 +37,9 @@ const Auth = () => {
         else{
           dispatch(setLoggedinuser(res.data.user));
           localStorage.setItem("token",res.headers.token);
-          // const data= localStorage.getItem("token");
-          // console.log(data)
+       
+        
+      
           setCredentials({});
           toast.success(res.data.message)
       
@@ -72,7 +74,7 @@ const Auth = () => {
           // navigate("/auth");
           // setPage(true);
         } }catch (error) {
-          toast.error(error.response.data.message)
+          toast.error(error.res.data.message)
         }
         finally {
         setLoading(false)

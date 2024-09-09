@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { CiSearch } from "react-icons/ci";
 import {useSelector,useDispatch} from "react-redux"
 import { setSelectedUser } from '../../redux/userSlice';
@@ -8,8 +8,13 @@ const Left = () => {
   
     const dispatch= useDispatch()
   const users= useSelector((state)=>state.user.suggestedUsers)
-  const onlineUsers= useSelector((state)=>state.chat.onlineUsers)
-  const selectedUser= useSelector((state)=>state.user.selectedUser)
+  useEffect(()=>{
+    // return ()=>{
+    //     dispatch(setSelectedUser(null));
+    // }
+  },[]);
+  // const onlineUsers= useSelector((state)=>state.chat.onlineUsers)
+  // const selectedUser= useSelector((state)=>state.user.selectedUser)
 
     
  

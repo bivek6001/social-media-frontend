@@ -4,7 +4,7 @@ import Posts from '../posts/Posts'
 
 const Feed = () => {
   return (
-    <div className=' border'><Posts/></div>
+    <div className='my-9'><Posts/></div>
   )
 }
 
