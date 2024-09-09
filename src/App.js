@@ -27,14 +27,14 @@ const router = createBrowserRouter([
     path: "/auth",
     element: <Auth/>
   },
-  // {
+  // 
   //   path:"/edit",
   //   element:<EditProfile/>
   // },
   
 
   {
-    path: "/message",
+    path: "/",
     element:<ProtectedRoute> <Message></Message></ProtectedRoute>
   },
   // {path:"/user/profile",
